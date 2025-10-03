@@ -1,28 +1,45 @@
-import React, { useContext } from 'react'
-import './FoodItem.css'
-import { assets } from '../../assets/assets'
-import { StoreContext } from '../../context/StoreContext'
-
+import React, { useContext } from 'react';
+import './FoodItem.css';
+import { assets } from '../../assets/assets';
+import { StoreContext } from '../../context/StoreContext';
+import { useNavigate } from 'react-router-dom';
 
 const FoodItem = ({ id, name, price, description, image }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const navigate = useNavigate();
+
+  // Function to handle navigation to food details
+  const goToDetails = () => {
+    navigate(`/food/${id}`);
+  };
 
   return (
     <div className='food-item'>
       <div className='food-item-img-container'>
-        <img className='food-item-image' src={image} alt='' />
-        
-        {/* Agar cart me item nhi hai to + icon dikhana */}
+        {/* Image click pe details open */}
+        <img
+          className='food-item-image'
+          src={image}
+          alt={name}
+          onClick={goToDetails}
+        />
+
+        {/* Cart buttons */}
         {!cartItems[id] ? (
           <img
-            className='add'
-            onClick={() => addToCart(id)}
+            className='addbtn'
+            onClick={(e) => {
+              e.stopPropagation(); // Taaki image click se conflict na ho
+              addToCart(id);
+            }}
             src={assets.add_icon_white}
             alt='add'
           />
         ) : (
-          /* Agar cart me item hai to counter dikhana */
-          <div className='food-item-counter'>
+          <div
+            className='food-item-counter'
+            onClick={(e) => e.stopPropagation()} // Div click se parent navigate na ho
+          >
             <img
               onClick={() => removeFromCart(id)}
               src={assets.remove_icon_red}
@@ -47,7 +64,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
         <p className='food-item-price'>${price}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FoodItem
+export default FoodItem;

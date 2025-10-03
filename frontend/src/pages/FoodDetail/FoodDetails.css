@@ -1,0 +1,167 @@
+.food-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.food-details-inner {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Back Button */
+.back-btn {
+  background: none;
+  border: none;
+  color: #ff7f50; /* Orange tomato theme */
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ---------- Images Section ---------- */
+.food-images-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.food-main-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.food-thumbnails {
+  display: flex;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.thumbnail:hover {
+  border-color: #ff7f50;
+}
+
+.thumbnail.selected {
+  border-color: #ff7f50;
+}
+
+/* ---------- Info Section ---------- */
+.food-info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.food-info-section h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.food-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.food-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff7f50;
+}
+
+/* ---------- Cart & Buttons ---------- */
+.food-details-cart {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.add-btn {
+  background-color: #ff7f50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #e67340;
+}
+
+.buy-now-btn {
+  background-color: #ff7f50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buy-now-btn:hover {
+  background-color: #e67340;
+}
+
+/* Counter */
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.counter button {
+  padding: 10px 15px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.plus-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.plus-btn:hover {
+  background-color: #218838;
+}
+
+.minus-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.minus-btn:hover {
+  background-color: #c82333;
+}
+
+.counter span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
