@@ -14,7 +14,6 @@ import Orders from './pages/seller/pages/Orders/Orders';
 import List from './pages/seller/pages/List/List';
 import Add from './pages/seller/pages/Add/Add';
 import { url } from './pages/seller/assets/assets';
-import FoodDetail from './pages/FoodDetail/FoodDetail';
 
 const App = () => {
       const url = "http://localhost:3000"
@@ -39,7 +38,6 @@ const App = () => {
           <Route path='/order' element={<PlaceOrder />} />
           <Route path='/verify' element={<Verify />} />
           <Route path='/myorders' element={<MyOrders />} />
-          <Route path="/food/:id" element={<FoodDetail />} />
           {/* ✅ Nested admin routes */}
           <Route path='/admin' element={<SellerRoute />}>
             <Route path='add' element={<Add url={url} />} />
