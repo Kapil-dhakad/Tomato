@@ -15,6 +15,7 @@ import List from './pages/seller/pages/List/List';
 import Add from './pages/seller/pages/Add/Add';
 import { url } from './pages/seller/assets/assets';
 import FoodDetails from './pages/FoodDetail/FoodDetails';
+import { API_URL } from "./config";
 
 const App = () => {
       const url = "http://localhost:3000"
@@ -42,9 +43,9 @@ const App = () => {
           <Route path="/food/:id" element={<FoodDetails />} />
           {/* ✅ Nested admin routes */}
           <Route path='/admin' element={<SellerRoute />}>
-            <Route path='add' element={<Add url={url} />} />
-            <Route path='list' element={<List url={url} />} />
-            <Route path='orders' element={<Orders url={url} />} />
+            <Route path='add' element={<Add url={API_URL} />} />
+            <Route path='list' element={<List url={API_URL} />} />
+            <Route path='orders' element={<Orders url={API_URL} />} />
           </Route>
         </Routes>
       </div>

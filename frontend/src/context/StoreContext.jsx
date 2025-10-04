@@ -1,12 +1,13 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../config"; 
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
   const [food_list, setFood_list] = useState([]);
-  const url = "http://localhost:3000";  //process.env.VITE_URL;
+  const url = API_URL;  //process.env.VITE_URL;
 
   const fetchFoodList = async () => {
     try {
