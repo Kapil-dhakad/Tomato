@@ -21,6 +21,10 @@
     align-items: start;
     gap: 20px;
 }
+.footer-content-right li:hover,  .footer-content-center li:hover{
+    color: tomato;
+}
+
 .footer-content-left li, .footer-content-right li,  .footer-content-center li{
    list-style: none;
    margin-bottom: 10px;
